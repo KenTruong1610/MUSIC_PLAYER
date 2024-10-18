@@ -31,14 +31,18 @@ body {
 .now-playing {
   font-size: 2rem;
   font-weight: bold;
+  justify-content: center;
 }
 
 .track-name {
   font-size: 3rem;
+  font-weight: bold;
+  justify-content: center;
 }
 
 .track-singer {
   font-size: 1.5rem;
+  justify-content: center;
 }
 
 .buttons {
