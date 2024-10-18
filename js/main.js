@@ -98,9 +98,32 @@ function resetValues() {
 
 loadTrack(track_index);
 
+function nextTrack() {
+  if (track_index < track_list.length - 1) {
+    track_index += 1;
+    loadTrack(track_index);
+    playTrack();
+  } else {
+    // Reset to the first track and stop playback
+    track_index = 0;
+    loadTrack(track_index);
+    stopTrack();  // Stop the playback and reset the state
+  }
+}
+
+function stopTrack() {
+  pauseTrack();  // Pause the current track
+  curr_track.currentTime = 0;  // Reset track time to the beginning
+  seek_slider.value = 0;  // Reset seek slider
+  curr_time.textContent = "00:00";  // Update current time display
+}
+
 function playpauseTrack() {
-  if (!isPlaying) playTrack();
-  else pauseTrack();
+  if (!isPlaying) {
+    playTrack();
+  } else {
+    pauseTrack();
+  }
 }
 
 function playTrack() {
@@ -115,13 +138,10 @@ function pauseTrack() {
   playpause_btn.innerHTML = '<i class="fa fa-play-circle fa-5x"></i>';
 }
 
-function nextTrack() {
-  if (track_index < track_list.length - 1)
-    track_index += 1;
-  else track_index = 0;
-  loadTrack(track_index);
-  pauseTrack();
-}
+// When the current track ends
+curr_track.addEventListener("ended", function() {
+  nextTrack(); // Go to the next track or reset to the first one
+});
 
 function prevTrack() {
   if (track_index > 0)
