@@ -17,7 +17,7 @@ let isPlaying = false;
 let updateTimer;
 let isSeeking = false; 
 
-let curr_track = document.createElement('audio');
+//let curr_track = document.createElement('audio');
 
 let track_list = [
   {
