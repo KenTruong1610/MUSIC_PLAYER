@@ -37,8 +37,34 @@ let track_list = [
     singer: "Quang Hùng MasterD, Erik, Negav, Pháp Kiều (Anh Trai Say Hi)",
     image: "./Image/TinhDauQuaChen.jpg",
     path: "./Music/TinhDauQuaChen.mp3",
+  },
+  {
+    name: "Bầu Trời Mới",
+    singer: "Da LAB ft. Minh Tốc & Lam",
+    image: "./Image/BTM.jpg",
+    path: "./Music/BTM.mp3",
+  },
+  {
+    name: "một đời",
+    singer: "Changg, Minh Huy",
+    image: "./Image/md.jpg",
+    path: "./Music/md.mp3",
+  },
+  {
+    name: "Em Không Hiểu",
+    singer: "14 Casper & Bon Nghiêm (feat. buitruonglinh)",
+    image: "./Image/ekh.jpg",
+    path: "./Music/ekh.mp3",
+  },
+  {
+    name: "I'm Thinking About You",
+    singer: " Tlinh, Rhyder, WEAN, Đức Phúc, Hùng Huỳnh (Anh Trai Say Hi)",
+    image: "./Image/I'm Thinking About You.jpg",
+    path: "./Music/I'm Thinking About You.mp3",
   }
 ];
+
+
 
 function random_bg_color() {
   let red = Math.floor(Math.random() * 400) + 64;
@@ -59,7 +85,7 @@ function loadTrack(track_index) {
   track_singer.textContent = track_list[track_index].singer;
   now_playing.textContent = "PLAYING " + (track_index + 1) + " OF " + track_list.length;
 
-  updateTimer = setInterval(seekUpdate, 100); // Cập nhật mỗi 100 ms để tăng độ chính xác
+  updateTimer = setInterval(seekUpdate, 100); 
   curr_track.addEventListener("ended", nextTrack);
   random_bg_color();
 }
@@ -94,7 +120,7 @@ function nextTrack() {
     track_index += 1;
   else track_index = 0;
   loadTrack(track_index);
-  playTrack();
+  pauseTrack();
 }
 
 function prevTrack() {
