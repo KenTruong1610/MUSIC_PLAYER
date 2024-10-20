@@ -59,7 +59,7 @@ let track_list = [
   {
     name: "I'm Thinking About You",
     singer: "Tlinh, Rhyder, WEAN, Đức Phúc, Hùng Huỳnh (Anh Trai Say Hi)",
-    image: "./Image/i.jpg",
+    image: "./Image/a.jpg",
     path: "./Music/I'm Thinking About You.mp3",
   }
 ];
