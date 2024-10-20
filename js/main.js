@@ -58,13 +58,11 @@ let track_list = [
   },
   {
     name: "I'm Thinking About You",
-    singer: " Tlinh, Rhyder, WEAN, Đức Phúc, Hùng Huỳnh (Anh Trai Say Hi)",
+    singer: "Tlinh, Rhyder, WEAN, Đức Phúc, Hùng Huỳnh (Anh Trai Say Hi)",
     image: "./Image/i.jpg",
     path: "./Music/I'm Thinking About You.mp3",
   }
 ];
-
-
 
 function random_bg_color() {
   let red = Math.floor(Math.random() * 400) + 64;
@@ -86,7 +84,7 @@ function loadTrack(track_index) {
   now_playing.textContent = "PLAYING " + (track_index + 1) + " OF " + track_list.length;
 
   updateTimer = setInterval(seekUpdate, 100); 
-  curr_track.addEventListener("ended", nextTrack);
+  curr_track.addEventListener("ended", nextTrack); // Automatically move to next track when current one ends
   random_bg_color();
 }
 
@@ -137,11 +135,6 @@ function pauseTrack() {
   isPlaying = false;
   playpause_btn.innerHTML = '<i class="fa fa-play-circle fa-5x"></i>';
 }
-
-// When the current track ends
-curr_track.addEventListener("ended", function() {
-  nextTrack(); // Go to the next track or reset to the first one
-});
 
 function prevTrack() {
   if (track_index > 0)
