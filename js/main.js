@@ -46,13 +46,13 @@ let track_list = [
   },
   {
     name: "một đời",
-    singer: "Changg, Minh Huy",
+    singer: "14 Casper & Bon Nghiêm (feat. buitruonglinh)",
     image: "./Image/md.jpg",
     path: "./Music/md.mp3",
   },
   {
     name: "Em Không Hiểu",
-    singer: "14 Casper & Bon Nghiêm (feat. buitruonglinh)",
+    singer: "Changg, Minh Huy",
     image: "./Image/ekh.jpg",
     path: "./Music/ekh.mp3",
   },
